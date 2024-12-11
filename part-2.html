@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::selection{
+          background-color: #000;
+          color: #ffffff;
+        }
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+        }
+        .container div{
+              font-size: 1.5rem;
+              border: 3px;
+              border-style: solid;
+              border-color: red transparent red transparent;
+              width: 100px;
+              text-align: center;
+              border-radius: 20px;
+              padding: 20px;
+              margin-top: 50px;
+              margin-left: 50px;
+              box-shadow: 0px 0px 10px #000;
+        }
+        .container div:hover{
+            border: 3px;
+              border-style: solid;
+              border-color: rgb(51, 255, 0) transparent rgb(38, 255, 0) transparent;
+              /* box-shadow: 0px 0px 15px rgb(0, 0, 0); */
+              transform: scale(0.9);
+        }
+        .sub-btn{
+          /* display: block; */
+          /* margin: auto; */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 100px;
+        }
+        .sub-btn button{
+          padding: 10px 80px ;
+          font-size: 1.1rem;
+          border: none;
+          border: 2px ;
+          border-style: solid;
+          border-color: green lightgreen darkgreen lightgreen;
+          border-radius: 20px;
+          font-weight: 600;
+          background-color: rgba(212, 213, 255, 0.461);
+          box-shadow: 3px 3px 3px black;
+        }
+        .sub-btn button:active{
+          transform: scale(0.9);
+          box-shadow: 1px 1px 5px black;
+        }
+        hr{
+          border: 1px dashed rgb(144, 126, 10);
+        }
+        dialog::backdrop{
+          background-color: rgba(16, 16, 16, 0.356);
+        }
+        #assignment{
+          width: 400px;
+          height: 500px;
+          margin: auto;
+          text-align: center;
+          line-height: 1.5;
+          border: none;
+          border: 5px;
+          border-style: solid;
+          border-color: green transparent green transparent;
+          border-radius: 50px;
+          /* background-color: rgb(223, 223, 223); */
+          /* box-shadow: 5px 5px 5px black; */
+        }
+        #assignment button{
+          padding: 10px 80px ;
+          font-size: 1.1rem;
+          border: none;
+          border: 2px ;
+          border-style: solid;
+          border-color: green lightgreen darkgreen lightgreen;
+          border-radius: 20px;
+          font-weight: 600;
+          background-color: rgba(212, 213, 255, 0.461);
+          box-shadow: 3px 3px 3px black; 
+          margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+              
+
+
+    <script>
+        var number = 150;
+        var number1 = 100;
+
+        //document.write(`${number}`)
+        ///document.write(`${number1}`)
+
+        document.write(`
+            <section class="container">
+                <div>
+                  <span style="color:green;"> + ${number} <br> ${number1} <br> <span style="color:red;"> <hr> ${number + number1} <hr>
+                </div>
+
+                <div>
+                  <span style="color:green;"> - ${number} <br> ${number1} <br> <span style="color:red;"> <hr> ${number - number1} <hr>
+                </div>
+
+                <div>
+                  <span style="color:green;"> * ${number} <br> ${number1} <br> <span style="color:red;"> <hr> ${number * number1} <hr>
+                </div>
+
+                <div>
+                  <span style="color:green;"> / ${number} <br> ${number1} <br> <span style="color:red;"> <hr> ${number / number1} <hr>
+                </div>
+            </section>
+        `)
+        
+       // document.write(` + ${number} <br> ${number1} <br> ${number + number1}`);
+    </script>
+<br><br><br><br><br>
+<hr><hr>
+
+           <div class="sub-btn">
+                <button onclick="showsucces()"> Submit your assignment</button>
+           </div>
+
+           <dialog id="assignment">
+            <img src="https://digital-service.my.id/konsultasi/assets/img/check72.gif" alt="" width="200"> <br>
+            <h1>Successfully completed your assignment</h1>   <br> <br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, dolorem corrupti? Labore fugit rem quidem possimus repellat dolorem quisquam mollitia voluptatum ex iusto quasi sapiente qui reiciendis sunt, modi fuga.</p>
+
+            <button onclick="closeSucces()">Success</button>
+          </dialog>
+
+          <script>
+            let success = document.getElementById('assignment')
+
+            function showsucces(){
+              success.showModal()
+            }
+            
+            function closeSucces(){
+              success.close()
+            }
+          </script>
+
+</body>
+</html>

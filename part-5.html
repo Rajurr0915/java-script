@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 10px;
+            margin: 20px 40px;
+            box-sizing: border-box;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            border: 1px lightgreen solid;
+        }
+        .name{
+            color: red;
+        }
+        .names{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    
+
+
+    <script>
+
+        let f_name = "shankar";
+        let name  = "raju";
+
+        document.write(` <h1>${ typeof f_name}</h1>`)
+        document.write(`<h1>${typeof name}</h1>`)
+
+        if(f_name == name){
+            document.write(`<h1> the f_name and name is mach ${f_name} ${name} </h1>`);
+        }else{
+            document.write(`<h1 class="name"> The f_name and name if not mach = "${f_name} ,  ${name} "</h1>`);
+        }
+
+       
+
+        let name1 = "Harish";
+        let name2 = "Harish M"
+
+        document.write(`<h1>${typeof name1 }</h1>`)
+        document.write(`<h1>${typeof name2 }</h1>`)
+
+        if(name1 == name2){
+            document.write(`<h1> The custemer name was maching with first name and secoundname  = "${name1} ,  ${name2} "</h1>`);
+        }else{
+            document.write(`<h1 class="name">  The custmer name was nor mach in our data base = "${name1} ,  ${name2} " </h1>`);
+        }
+
+
+        var price = 800;
+        var price1 = 800;
+     
+        document.write(`<h1>${typeof price}</h1>`)
+
+        if( price == price1){
+            document.write(`<h1 class="names">The item was purchased at the same price as before = " ${price}, ${price1} " </h1>`);
+        }else{
+            document.write(`<h1 class="name"> The item was purchased at the not same price as before. </h1>`);
+        }
+
+
+
+        // let price = 100;
+        // let discountAvailable = true;
+
+        //     if (discountAvailable){
+        //         document.write(`The customer gets a discount! The price is reduced to ${price * 0.9}.`);
+        //     } else {
+        //         document.write(`The price remains the same: ${price}.`);
+        //     }
+
+        let amount = 100;
+        let  discount = true;
+
+        if(discountAvailable){
+                document.write(`<h1>The customer gets a discount! The price is reduced to ${price * 0.9}</h1>`)
+        }else{
+            document.write(`<h1>The price remains the same: ${price}</h1>`)
+        }
+
+    </script>
+
+</body>
+</html>

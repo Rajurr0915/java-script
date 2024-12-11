@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card form{
+            width: 500px;
+            padding: 20px;
+            border: 1px;
+            border-style: solid;
+            border-color: rgb(0, 0, 0);
+            margin-top: 80px;
+            box-shadow: 0px 0px 0px black;
+            border-radius: 20px;
+            margin-bottom: 50px;
+
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            border: 1px;
+            border-style: solid;
+            border-color: rgba(255, 0, 0, 0.32) rgba(0, 128, 0, 0) rgba(218, 165, 32, 0.301) rgba(0, 0, 255, 0);
+            border-radius: 50px;
+            font-size: 1rem;
+            
+        }
+        label{
+            font-size: 1.2rem;
+        }
+        button{
+            border: none;
+            padding: 10px;
+            width: 100%;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            background-color: blue;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:active{
+            transform: scale(0.9);
+        }
+        h1{
+            color: rgb(122, 122, 122);
+        }
+    </style>
+</head>
+<body>
+    <div class="cantainer">
+          <div class="card">
+            <form action="">
+                <h1> Form for custemer</h1> <br>
+                <label for="">Username </label>
+                <input type="text" id="name" placeholder="Enter Your Username ">
+                <small id="username_errer">  </small> <br>
+
+                <br>
+
+                <label for="">Account Holder  Name </label>
+                <input type="text" id="f-name" placeholder="Enter Your first-name ">
+                <input type="text" id="s-name" placeholder="Enter Your secound-name ">
+                <small id="f_name_errer">  </small>
+
+                <br>
+
+                <label for="">Gmail </label>
+                <input type="email" id="email" placeholder="Enter Your email ">
+                <small id="email_errer">  </small>
+
+                <br>
+
+                <label for="">Phone Number  </label>
+                <input type="number" id="phone" placeholder="Enter Your phone ">
+                <input type="number" id="phone" placeholder="Enter Your secound-number ">
+                <small id="phone_errer">  </small>
+
+                <br>
+
+                <label for="">Address </label>
+                <input type="text" id="address" placeholder="Enter Your address ">
+                <small id="address_errer">  </small>
+
+                <br>
+
+                <label for="">Aadhar Card Number</label>
+                <input type="number" id="aadhar" placeholder="Enter Your Aadhar card Number">
+                <small id="aadhar_errer"></small>
+
+                <br>
+
+                <label for="">Pan Card Number</label>
+                <input type="text" id="pan" placeholder="Enter Your Pan card Number">
+                <small id="pan_errer"></small>
+
+                <br>
+
+                <button type="button" onclick="openBankAccount()"> Creat Your Bank Account</button>
+
+            </form>
+             <!-- <form action="">
+                <h1> For Bank Use Only</h1> <br>
+                <label for="">Username </label>
+                <input type="text" id="name" placeholder="Enter Your Username ">
+                <small id="username_errer">  </small>
+
+                <br>
+
+                <label for="">Account Holder  Name </label>
+                <input type="text" id="f-name" placeholder="Enter Your first-name ">
+                <input type="text" id="s-name" placeholder="Enter Your secound-name ">
+                <small id="f_name_errer">  </small>
+
+                <br>
+
+                <label for="">Gmail </label>
+                <input type="email" id="email" placeholder="Enter Your email ">
+                <small id="email_errer">  </small>
+
+                <br>
+
+                <label for="">Phone Number  </label>
+                <input type="number" id="phone" placeholder="Enter Your phone ">
+                <input type="number" id="phone" placeholder="Enter Your secound-number ">
+                <small id="phone_errer">  </small>
+
+                <br>
+
+                <label for="">Address </label>
+                <input type="text" id="address" placeholder="Enter Your address ">
+                <small id="address_errer">  </small>
+
+                <br>
+
+                <label for="">Aadhar Card Number</label>
+                <input type="number" id="aadhar" placeholder="Enter Your Aadhar card Number">
+                <small id="aadhar_errer"></small>
+
+                <br>
+
+                <label for="">Pan Card Number</label>
+                <input type="text" id="pan" placeholder="Enter Your Pan card Number">
+                <small id="pan_errer"></small>
+
+                <br>
+
+                <button type="button" onclick="openBankAccount()"> Creat Your Bank Account</button>
+
+            </form> -->
+          </div>
+    </div> 
+
+    <script>
+
+        let username = document.getElementById('name');
+        let user_errer = document.getElementById('username_errer');
+
+        let first_name = document.getElementById('f-name');
+        let secound_name = document.getElementById('s-name');
+        let name_errer = document.getElementById('f_name_errer');
+
+        let email = document.getElementById('email');
+        let email_errer = document.getElementById('email_errer');
+
+        let phonenumber = document.getElementById('phone');
+        let phone_errer = document.getElementById('phone_errer');
+
+        let addres_1 = document.getElementById('address');
+        let address_errer = document.getElementById('address_errer');
+
+        let aadhar_card = document.getElementById('aadhar');
+        let addhar_card_errer = document.getElementById('aadhar_errer');
+
+        
+
+        function openBankAccount(){
+            if(username.value == ""){
+                user_errer.innerHTML = alert(' Please Fill the your username');
+            }
+            else if(username.value.length<=10){
+                user_errer.innerHTML = alert(' Please enter above 8 charecters length username');
+            }
+            else{
+                user_errer.innerHTML = '<span> Valid usernmae </span>'
+            }
+
+            if(first_name.value == ""){
+                name_errer.innerHTML = alert('please fill your first name');
+            }
+            else if(first_name.value.length<=10){
+                name_errer.innerHTML = alert('Please enter above 10 charecters length first name');
+            }
+            else if(secound_name.value ==""){
+                name_errer.innerHTML = alert('Please fill your secound name');
+            }
+            else if(secound_name.value.length<=2){
+                name_errer.innerHTML = alert('Please enter above 2 charecters length secound name');
+            }
+            else{
+                name_errer.innerHTML = '<span style="color:green> Valid Your first name and secound name </span>'
+            }
+
+
+
+            if(email.value == ""){
+                email_errer.innerHTML = alert('pleasse enter your email');
+            }
+            else if(email.value.length<=10){
+                email_errer.innerHTML = alert(' please enter above 10 carecters length your name ')
+            }
+            else{
+                email_errer.innerHTML = '<span style="color:green> Valid Your email </span>'
+            }
+
+
+            if(phonenumber.value == ''){
+                phone_errer.innerHTML = alert(' please enter your number  ');
+            }
+            else if(phonenumber.value.length>=10){
+                phone_errer.innerHTML = alert('only 10 numbers you can enter')
+            }
+            else{
+                phone_errer.innerHTML = '<span style="color:green> Valid Your email </span>'
+            }
+
+
+            if(addres_1.value == ""){
+                address_errer.innerHTML = alert('please enter your address');
+            }
+            else if(addres_1.value.length<=10){
+                address_errer.innerHTML = alert('please enter at list  10 carecters length your address ');
+            }
+            else{
+                address_errer.innerHTML = '<span style="color:green> Valid Your address  </span>'
+            }
+
+
+            if(aadhar_card.value == ""){
+                addhar_card_errer.innerHTML = alert(' please Enter your Aadhar card number ');
+            }
+            else if(aadhar_card.value.length >12){
+                addhar_card_errer.innerHTML = alert('You can enter only 12 digit numbes');
+            }
+            else{
+                addhar_card_errer.innerHTML = '<span style="color:green"> Valid Your Aadhar card  </span>'
+            }
+            
+
+        }
+
+    </script>
+</body>
+</html>

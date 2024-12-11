@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .input-det{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0px 50px;
+            border: 5px;
+            border-style: solid;
+            border-color: red yellow green gray;
+            height: 300px;
+            margin-top: 100px;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: rgba(223, 223, 223, 0.354);
+            box-shadow: 5px 5px 5px #000;
+        }
+        .get-1{
+            font-size: 2rem;
+        }
+        .rich-name{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .rich-nami1{
+            font-size: 1rem;
+            font-weight: 300;
+        }
+        /* .rich-nami1 div{
+            border: none;
+        } */
+         input{
+            border: none;
+            padding: 15px 40px;
+            background-color: rgba(255, 217, 0, 0.215);
+            outline: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.514);
+            margin: 10px 20px;
+         }
+         input:active{
+            transform: scale(0.9);
+            background-color: transparent;
+         }
+    </style>
+</head>
+<body>
+    
+    <script>
+        //one side dic contante
+
+        var get = '<h1>Get in touch</h1>';
+        var rich = '<p>Ricardo Restaurant is situated at the very historical heart of Alexandria, VA. Our address is well known to locals as the most home-like, and delicious place in the city!</p>';
+        var rich1 = '<p>Please contact us using the form on the page in regards to any questions you might have, or to make a booking with us.</p>';
+
+        // input side contante 
+
+        var name = '<input type="text" placeholder="Enter your Name">';
+        var phone = '<input type="number" placeholder="Enter your Number">';
+        var email = '<input type="email" placeholder="Enter your Email">';
+        var massage = '<input type="text" placeholder="Enter your Massage">';
+
+        document.write(`
+            <section class="input-det">
+                <div class="get-1">
+                ${get}
+                <div class="rich-name">
+                        <div class="rich-nami1">
+                            ${rich}
+                            ${rich1}
+                        </div>    
+                        <div>
+                            ${name} 
+                            ${phone}
+                            ${email}
+                            ${massage}
+                        </div>
+                </div>
+                </div>
+            </section>
+        `)
+    </script>
+</body>
+</html>
