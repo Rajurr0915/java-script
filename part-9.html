@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* display: block;
+            align-items: center;
+            justify-content: center; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+
+
+    </div>
+
+    <script>
+
+        // let head1 = document.createElement('ul')
+        
+
+        let container = document.getElementById('container');
+        let h1 = document.createElement('h1');
+        h1.innerText = 'javascript topics list';
+        h1.style.color = '#8D0B41';
+        h1.style.fontSize = '5rem';
+        h1.style.textAlign = 'center';
+        h1.style.margin = '20px 10px';
+        container.appendChild(h1);
+        // container.style.backgroundImage = 'url(https://static.vecteezy.com/system/resources/previews/027/127/560/original/javascript-logo-javascript-icon-transparent-free-png.png)'
+        container.style.backgroundColor = '#F5EFE7';
+        container.style.padding = '20px';
+        
+        let  p1 = document.createElement('p');
+        p1.innerText = 'JavaScript is a high-level, dynamic, and interpreted programming language used for client-side scripting on the web. It was created by Brendan Eich in 1995 and is primarily used for developing interactive client-side scripts for web pages. JavaScript is known for its versatility and is used for both front-end and back-end development, including server-side programming with technologies like Node.js.';
+        p1.style.fontSize = '1.2rem'
+        p1.style.textAlign = 'justify'
+        container.appendChild(p1);
+
+        let imagetag = document.createElement('img');
+        imagetag.src = 'http://www.pngall.com/wp-content/uploads/2016/05/Java-PNG-Picture.png';
+        imagetag.alt = 'image is loading.....!';
+        imagetag.style.width = '400px';
+        // imagetag.style.display = 'flex'
+        // imagetag.style.alignItems = 'center'
+        // imagetag.style.justifyContent = 'center'
+        container.appendChild(imagetag)
+
+        let marqueeTag  = document.createElement('marquee');
+        marqueeTag.innerText = 'list of popular JavaScript topics:';
+        marqueeTag.style.fontSize = '2.5rem'
+        marqueeTag.style.color = '#213555'
+        marqueeTag.style.fontWeight = 600
+        container.appendChild(marqueeTag)
+
+        let listTag = document.createElement('ul');
+
+        let listTag1 = document.createElement('li');
+        
+        let list1 = document.createElement('li');
+        list1.innerText = 'Front-end Developmen';
+
+        let list2 = document.createElement('li');
+        list2.innerText = 'Back-end Development';
+
+        let list3 = document.createElement('li');
+        list3.innerText = 'Frameworks and Libraries';
+
+        let list4 = document.createElement('li')
+        list4.innerText = 'Languages and Versions';
+
+        let list5 = document.createElement('li')
+        list5.innerText = 'Data structures and algorithms';
+
+
+        let allListTag = [list1, list2, list3, list4, list5];
+        console.log(allListTag);
+        console.log(allListTag[0]);
+
+
+        for(let i=0; i<=4; i++){
+            console.log(i);
+            allListTag[i].style.backgroundColor = '#72BAA9'
+            allListTag[i].style.border = '2px soild #fff'
+            allListTag[i].style.margin = '10px'
+            allListTag[i].style.padding = '10px 20px'
+            allListTag[i].style.borderRadius = '10px'
+            allListTag[i].style.boxShadow = '0px 0px 6px #000'
+            
+        }
+        container.appendChild(list1)
+        container.appendChild(list2)
+        container.appendChild(list3)
+        container.appendChild(list4)
+        container.appendChild(list5)
+        
+
+        // container.appendChild(listTag1)
+
+
+    </script>
+
+</body>
+</html>

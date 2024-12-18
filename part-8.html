@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        form{
+            width: 350px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        form input, form select{
+            padding: 6px;
+            font-size: 0.9rem;
+            width: 100%;
+            border: none;
+            outline: none;
+            border: 1px solid #ccc;
+            margin-top: 3px;
+            margin-bottom: 6px;
+            border-radius: 5px;
+        }
+        form button, .card a{
+            width: 100%;
+            padding: 8px;
+            font-size: 1rem;
+            background-color: #3014e6;
+            color: #fff;
+            border: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        form button:hover{
+            opacity: 0.8;
+        }
+        #result{
+            padding: 30px;
+        }
+        #result .card{
+            width: 350px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px #ccc;
+            margin: auto;
+        }
+        #result .card p{
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .card img{
+            width: 100%;
+        }
+
+
+        @media(max-width:376px){
+            .container{
+                width: 100%;
+            }
+            form{
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        #result{
+            padding: 4px;
+        }
+        #result .card{
+            width: 100%;
+            padding: 5px;
+            box-shadow: 0px 0px 10px #ccc;
+            margin: auto;
+        }
+        #result .card p{
+            width: 100%;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            
+        }
+        .card img{
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="">
+            <label for="">Festival</label>
+            <select name="" id="festival">
+                <option value="" selected disabled>Select any festival</option>
+                <option value="Republic Day">Republic Day</option>
+                <option value="Holi">Holi</option>
+                <option value="Good Friday">Good Friday </option>
+                <option value="Id_ul_Fitr">Id-ul-Fitr</option>
+                <option value="Ram Navmi">Ram Navmi</option>
+                <option value="Diwali">Diwali</option>
+                <option value="Vijayadashami">Vijayadashami</option>
+                <option value="vinayaka chavithi">vinayaka chavithi</option>
+                <option value="Christmas">Christmas </option>
+            </select>
+            <span id="festival_error"></span>
+            <button type="button" onclick="FestivalChecker()">Know About this day</button>
+        </form>
+    </div>
+    <section id="result"></section>
+
+    <script>
+        let data = {
+            Republic_Day:{
+                date:'January 26',
+                day:'Friday',
+                about:"A republic is a state where the people's representatives hold political power, and the head of state is not a monarch. The term comes from the Latin phrase res publica, which means 'public affair'",
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFJTHe8fjjbTS34tvTnC1l5jJs8_kzxBYxcQ&s",
+                link:'https://en.wikipedia.org/wiki/Republic_Day_(India)'
+            },
+            Holi:{
+                date:'	March 25',
+                day:'Monday',
+                about:"Holi, also known as the Festival of Colors, is a Hindu festival that celebrates the arrival of spring, the triumph of good over evil, and the love between the deities Radha and Krishna",
+                image:"https://www.hindustantimes.com/ht-img/img/2024/03/20/1600x900/98fe5d5c96f16f61ff_1710922427406_1710922427664.jpg",
+                link:'https://en.wikipedia.org/wiki/Holi'
+            },
+
+            good:{
+                date:'	March 29',
+                day: 'friday',
+                about:"Good Friday is a significant Christian holiday that commemorates the crucifixion of Jesus Christ. In 2024, Good Friday will fall on April 19th. It is a day of fasting and repentance in many Christian traditions. The date of Good Friday varies each year, but it is always the Friday before Easter Sunday. Easter Sunday in 2024 will be on April 21st, making Good Friday on April 19th. This year's Good Friday will be an opportunity for Christians to reflect on Jesus' sacrifice and its significance in their faith.",
+                image:"https://y20india.in/wp-content/uploads/2024/03/108786132-1024x576.webp",
+                link:'https://en.wikipedia.org/wiki/Good_Friday'
+            },
+
+            Id_ul_Fitr:{
+                date:'	April 10',
+                day:'Wednesday',
+                about:"Eid al-Fitr (/ˌiːd əl ˈfɪtər, -trə/ EED əl FIT-ər, ⁠rə; Arabic: عيد الفطر, romanized: ʿĪd al-Fiṭr, IPA: [ʕiːd al ˈfɪtˤr]) is the earlier of the two official holidays celebrated within Islam (the other being Eid al-Adha). Eid al-Fitr is celebrated by Muslims worldwide because it marks the end of the month-long dawn-to-dusk fasting of Ramadan.[4] Eid al-Fitr falls on the first day of Shawwal in the Islamic calendar; this does not always fall on the same Gregorian day, as the start of any lunar Hijri month varies based on when the new moon is sighted by local religious authorities. The holiday is known under various other names in different languages and countries around the world",
+                image:"https://mos.org.pk/wp-content/uploads/2021/07/eid-ul-fitr-history.jpg",
+                link:'https://en.wikipedia.org/wiki/Eid_al-Fitr'
+            },
+            Ram_Navmi:{
+                date:'	April 17',
+                day:'Wednesday',
+                about:"Rama Navami (Sanskrit: राम नवमी, romanized: Rāmanavamī) is a Hindu festival that celebrates the birth of Rama, one of the most popularly revered deities in Hinduism, also known as the seventh avatar of Vishnu.[5][6][7] He is often held as an emblem within Hinduism for being an ideal king and human through his righteousness, good conduct and virtue.[7][8] The festival falls on the ninth day of the bright half (Shukla Paksha) of the lunar cycle of Chaitra (March–April), the first month in the Hindu calendar.[9] It is also part of the Chaitra Navaratri festival in spring.[10] Rama Navami is a holiday for government employees in India.",
+                image:"https://www.bhadradrisriramatempleofusa.org/wp-content/uploads/2021/02/SriRamaNavamiEvent.jpg",
+                link:'https://en.wikipedia.org/wiki/Rama_Navami'
+            },
+            Diwali:{
+                date:'	October 21',
+                day:'Tuesday',
+                about:"Diwali (English: /dɪˈwɑːliː/), also called Deepavali (IAST: Dīpāvalī) or Deepawali (IAST: Dīpāwalī),[4] is the Hindu festival of lights, with variations celebrated in other Indian religions such as Jainism and Sikhism.[a] It symbolises the spiritual victory of Dharma over Adharma, light over darkness, good over evil, and knowledge over ignorance.[5][6][7][8] Diwali is celebrated during the Hindu lunisolar months of Ashvin (according to the amanta tradition) and Kartika—between around mid-September and mid-November",
+                image:"https://www.holidayscalendar.com/wp-content/uploads/2016/11/Diwali-iStock-1346852799.jpg",
+                link:'https://en.wikipedia.org/wiki/Diwali'
+            },
+            Vijayadashami:{
+                date:'	October 01',
+                day:'Wednesdayy',
+                about:"Holi, also known as the Festival of Colors, is a Hindu festival that celebrates the arrival of spring, the triumph of good over evil, and the love between the deities Radha and Krishna",
+                image:"https://www.drikpanchang.com/images/events/dussehra/3x/vijayadashami.jpg.pagespeed.ce.7G5-NriWQ6.jpg",
+                link:'https://en.wikipedia.org/wiki/Vijayadashami'
+            },
+            vinayaka_chavithi:{
+                date:'August 26',
+                day:'	Tuesday',
+                about:"Vinayaka Chavithi, also known as Ganesh Chaturthi, is a significant Hindu festival celebrated to honor Lord Ganesha, the remover of obstacles. It is observed on the fourth day of the bright half of the month of Bhadrapada, usually in August or September. The exact date of Vinayaka Chavithi 2025 will be announced once the Hindu calendar is updated. Generally, the festival falls between August 23rd and September 15th. ",
+                image:"https://rntalksllp.com/wp-content/uploads/2022/08/Ganesh-Chaturthi-Start-and-End-Date-2022-Vinayaka-Chaturti-Ganesh-Visarjan-Vinayaka-Chavithi-2022-Ganesh-Chaturthi-Quotes-9-1.jpg",
+                link:'https://en.wikipedia.org/wiki/Ganesh_Chaturthi'
+            },
+            Christmas:{
+                date:'December 25',
+                day:'Thursday',
+                about:"Christmas is an annual festival commemorating the birth of Jesus Christ, observed primarily on December 25[a] as a religious and cultural celebration among billions of people around the world. A liturgical feast central to Christianity, preparation for Christmas begins on the First Sunday of Advent and it is followed by Christmastide, which historically in the West lasts twelve days and culminates on Twelfth Night. Christmas Day is a public holiday in many countries, is celebrated religiously by a majority of Christians, as well as culturally by many non-Christians, and forms an integral part of the holiday season surrounding it.",
+                image:"https://getwallpapers.com/wallpaper/full/e/4/8/855150-new-wallpaper-christmas-scenes-1920x1080-for-android.jpg",
+                link:'https://en.wikipedia.org/wiki/Christmas'
+            },
+
+        }
+
+        let selectedFestival = document.getElementById('festival');
+        let result = document.getElementById('result');
+        let festival_error = document.getElementById('festival_error');
+
+        function FestivalChecker(){
+            if(selectedFestival.value == ""){
+                festival_error.innerHTML = '<span style="color:red">Please select any festival</span>'
+            }else{
+                festival_error.innerHTML = ''
+                // alert(selectedFestival.value)
+                switch (selectedFestival.value) {
+                    case 'Republic Day':
+                        result.innerHTML = `
+                            <div class="card">
+                                <img src=${data.Republic_Day.image} alt="image">
+                                <p>Festival Date: ${data.Republic_Day.date}</p>
+                                <p>Festival day: ${data.Republic_Day.day}</p>
+                                <p>${data.Republic_Day.about}</p>
+                                <a href=${data.Republic_Day.link} target="_blank">Know more</a>
+                                </div>
+                        `
+                        break;
+                        case 'Holi':
+                        result.innerHTML = `
+                            <div class="card">
+                                <img src=${data.Holi.image} alt="image">
+                                <p>Festival Date: ${data.Holi.date}</p>
+                                <p>Festival day: ${data.Holi.day}</p>
+                                <p>${data.Holi.about}</p>
+                                <a href=${data.Holi.link} target="_blank">Know more</a>
+                                </div>
+                        `
+                        break;
+                        case 'good friday':
+                        result.innerHTML = `
+                            <div class="card">
+                                <img src=${data.good.image} alt="image">
+                                <p>Festival Date: ${data.good.date}</p>
+                                <p>Festival day: ${data.good.day}</p>
+                                <p>${data.good.about}</p>
+                                <a href=${data.good.link} target="_blank">Know more</a>
+                                </div>
+                        `
+                        break;
+                        case 'Id_ul_Fitr':
+                        result.innerHTML = `
+                            <div class="card">
+                                <img src=${data.Id_ul_Fitr.image} alt="image">
+                                <p>Festival Date: ${data.Id_ul_Fitr.date}</p>
+                                <p>Festival day: ${data.Id_ul_Fitr.day}</p>
+                                <p>${data.Id_ul_Fitr.about}</p>
+                                <a href=${data.Id_ul_Fitr.link} target="_blank">Know more</a>
+                                </div>
+                        `
+                        break;
+                        case 'Ram Navmi':
+                        result.innerHTML = `
+                            <div class="card">
+                                <img src=${data.Ram_Navmi.image} alt="image">
+                                <p>Festival Date: ${data.Ram_Navmi.date}</p>
+                                <p>Festival day: ${data.Ram_Navmi.day}</p>
+                                <p>${data.Ram_Navmi.about}</p>
+                                <a href=${data.Ram_Navmi.link} target="_blank">Know more</a>
+                                </div>
+                        `
+                        break;
+                        case 'Diwali':
+                        result.innerHTML = `
+                            <div class="card">
+                                <img src=${data.Diwali.image} alt="image">
+                                <p>Festival Date: ${data.Diwali.date}</p>
+                                <p>Festival day: ${data.Diwali.day}</p>
+                                <p>${data.Diwali.about}</p>
+                                <a href=${data.Diwali.link} target="_blank">Know more</a>
+                                </div>
+                        `
+                        break;
+                        case 'Vijayadashami':
+                        result.innerHTML = `
+                            <div class="card">
+                                <img src=${data.Vijayadashami.image} alt="image">
+                                <p>Festival Date: ${data.Vijayadashami.date}</p>
+                                <p>Festival day: ${data.Vijayadashami.day}</p>
+                                <p>${data.Vijayadashami.about}</p>
+                                <a href=${data.Vijayadashami.link} target="_blank">Know more</a>
+                                </div>
+                        `
+                        break;
+                        case 'vinayaka chavithi':
+                        result.innerHTML = `
+                            <div class="card">
+                                <img src=${data.vinayaka_chavithi.image} alt="image">
+                                <p>Festival Date: ${data.vinayaka_chavithi.date}</p>
+                                <p>Festival day: ${data.vinayaka_chavithi.day}</p>
+                                <p>${data.vinayaka_chavithi.about}</p>
+                                <a href=${data.vinayaka_chavithi.link} target="_blank">Know more</a>
+                                </div>
+                        `
+                        break;
+                        case 'Christmas':
+                        result.innerHTML = `
+                            <div class="card">
+                                <img src=${data.Christmas.image} alt="image">
+                                <p>Festival Date: ${data.Christmas.date}</p>
+                                <p>Festival day: ${data.Christmas.day}</p>
+                                <p>${data.Christmas.about}</p>
+                                <a href=${data.Christmas.link} target="_blank">Know more</a>
+                                </div>
+                        `
+                        break;
+                    default:
+                    result.innerHTML = `
+                            <div class="card">
+                                <img src='https://medihelp24.com/public/assets/img/no_data.gif' alt="image">
+                            </div>`
+                        break;
+                }
+            }
+        }
+
+        
+    </script>
+</body>
+</html>
